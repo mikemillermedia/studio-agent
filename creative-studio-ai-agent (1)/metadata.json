@@ -1,0 +1,7 @@
+{
+  "name": "Creative Studio AI Agent",
+  "description": "A multimodal AI widget for a creative studio in Dallas-Fort Worth, featuring text chat and real-time voice interaction.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
