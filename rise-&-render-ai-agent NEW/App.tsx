@@ -5,6 +5,15 @@ const App: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
 
+// --- ADD THIS BLOCK ---
+  // Tell the website to resize the iframe when chat opens/closes
+  useEffect(() => {
+    if (window.parent) {
+      window.parent.postMessage({ type: 'resize', isOpen: isOpen }, '*');
+    }
+  }, [isOpen]);
+  // ----------------------
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBubble(true);
